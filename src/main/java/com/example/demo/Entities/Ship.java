@@ -1,20 +1,27 @@
-package com.example.demo.model.Entities;
+package com.example.demo.Entities;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Builder
-@Table(name = "excursions")
+@Table(name = "ships")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Excursion {
+public class Ship implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer excursionId;
-    private String excursionName;
+    private Integer shipId;
+    private int capability;
+    private String route;
+    private int ports;
+    private float duration;
+
+
 }
